@@ -1,0 +1,22 @@
+200 epochs completed in 1.627 hours.
+Optimizer stripped from runs/train/Ablation/Backbone/weights/last.pt, 5.3MB
+Optimizer stripped from runs/train/Ablation/Backbone/weights/best.pt, 5.3MB
+
+Validating runs/train/Ablation/Backbone/weights/best.pt...
+Ultralytics YOLOv8.2.50 🚀 Python-3.12.3 torch-2.3.1+cu121 CUDA:0 (NVIDIA GeForce RTX 4090, 24210MiB)
+                                                           CUDA:1 (NVIDIA GeForce RTX 4090, 24210MiB)
+Backbone summary (fused): 181 layers, 2505918 parameters, 0 gradients, 7.7 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 35/35 [00:11<00:00,  3.15it/s]
+                   all        548      38759      0.439      0.334      0.333      0.194
+            pedestrian        520       8844      0.448       0.35      0.352       0.15
+                people        482       5125      0.507      0.232      0.277     0.0989
+               bicycle        364       1287      0.272       0.11     0.0904     0.0356
+                   car        515      14064      0.655      0.751       0.76      0.523
+                   van        421       1975      0.482      0.382      0.394      0.272
+                 truck        266        750      0.419      0.288      0.282      0.183
+              tricycle        337       1045      0.356      0.236      0.215       0.12
+       awning-tricycle        220        532      0.251      0.165      0.117     0.0729
+                   bus        131        251       0.55       0.43      0.481       0.33
+                 motor        485       4886      0.446      0.393      0.364       0.15
+Speed: 0.1ms preprocess, 0.3ms inference, 0.0ms loss, 1.0ms postprocess per image
+Results saved to runs/train/Ablation/Backbone

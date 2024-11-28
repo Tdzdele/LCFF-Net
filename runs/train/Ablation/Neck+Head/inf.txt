@@ -1,0 +1,22 @@
+200 epochs completed in 2.302 hours.
+Optimizer stripped from runs/train/Ablation/Neck+Head/weights/last.pt, 3.9MB
+Optimizer stripped from runs/train/Ablation/Neck+Head/weights/best.pt, 3.9MB
+
+Validating runs/train/Ablation/Neck+Head/weights/best.pt...
+Ultralytics YOLOv8.2.50 🚀 Python-3.12.3 torch-2.3.1+cu121 CUDA:0 (NVIDIA GeForce RTX 4090, 24210MiB)
+                                                           CUDA:1 (NVIDIA GeForce RTX 4090, 24210MiB)
+Neck+Head summary (fused): 205 layers, 1645285 parameters, 36928 gradients, 14.5 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 35/35 [00:12<00:00,  2.85it/s]
+                   all        548      38759      0.487      0.389      0.398      0.238
+            pedestrian        520       8844       0.54      0.445      0.469      0.221
+                people        482       5125       0.53      0.342      0.376       0.15
+               bicycle        364       1287      0.324      0.128      0.136     0.0596
+                   car        515      14064      0.683      0.811       0.82      0.578
+                   van        421       1975       0.52      0.461      0.458      0.328
+                 truck        266        750      0.438      0.327      0.315      0.212
+              tricycle        337       1045      0.413      0.249      0.248      0.142
+       awning-tricycle        220        532      0.262      0.184      0.155     0.0999
+                   bus        131        251       0.59      0.504      0.528      0.371
+                 motor        485       4886      0.566      0.444      0.472      0.218
+Speed: 0.1ms preprocess, 0.7ms inference, 0.0ms loss, 4.1ms postprocess per image
+Results saved to runs/train/Ablation/Neck+Head

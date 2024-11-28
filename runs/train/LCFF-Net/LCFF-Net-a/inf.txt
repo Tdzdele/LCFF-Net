@@ -1,0 +1,22 @@
+200 epochs completed in 2.489 hours.
+Optimizer stripped from runs/train/LCFF-Net/LCFF-Net-a/weights/last.pt, 1.1MB
+Optimizer stripped from runs/train/LCFF-Net/LCFF-Net-a/weights/best.pt, 1.1MB
+
+Validating runs/train/LCFF-Net/LCFF-Net-a/weights/best.pt...
+Ultralytics YOLOv8.2.50 🚀 Python-3.12.3 torch-2.3.1+cu121 CUDA:0 (NVIDIA GeForce RTX 4090, 24210MiB)
+                                                           CUDA:1 (NVIDIA GeForce RTX 4090, 24210MiB)
+YOLOv8 summary (fused): 217 layers, 289461 parameters, 9248 gradients, 3.6 GFLOPs
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 35/35 [00:11<00:00,  3.08it/s]
+                   all        548      38759      0.366      0.293       0.28      0.159
+            pedestrian        520       8844      0.366      0.395      0.347      0.149
+                people        482       5125      0.473       0.26      0.277      0.103
+               bicycle        364       1287       0.17     0.0314     0.0474     0.0209
+                   car        515      14064      0.545      0.765      0.742      0.499
+                   van        421       1975      0.424      0.347       0.34      0.231
+                 truck        266        750      0.248      0.204      0.164      0.108
+              tricycle        337       1045      0.356      0.151       0.15     0.0818
+       awning-tricycle        220        532      0.221      0.124     0.0963     0.0621
+                   bus        131        251      0.422      0.283      0.287      0.187
+                 motor        485       4886      0.439      0.367      0.344      0.143
+Speed: 0.1ms preprocess, 0.4ms inference, 0.0ms loss, 7.8ms postprocess per image
+Results saved to runs/train/LCFF-Net/LCFF-Net-a
