@@ -11,7 +11,7 @@ if __name__ == '__main__':
                 workers=128,
                 device='0, 1',
                 optimizer='SGD',
-                # patience=0, # close earlystop
+                patience=50, 
                 amp=True,
                 project='runs/train/LCFF-Net',
                 name='LCFF-Net',
