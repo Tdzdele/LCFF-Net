@@ -24,7 +24,7 @@ class EMA(nn.Module):
         self.conv3x3 = nn.Conv2d(channels // self.groups, channels // self.groups, kernel_size=3, stride=1, padding=1)
     def forward(self, x):
         b, c, h, w = x.size()
-        group_x = x.reshape(b * self.groups, -1, h, w)  # b*g,c//g,h,w
+        group_x = x.reshape(b * self.groups, -1, h, w) 
         x_h = self.pool_h(group_x)
         x_w = self.pool_w(group_x).permute(0, 1, 3, 2)
         hw = self.conv1x1(torch.cat([x_h, x_w], dim=2))
@@ -32,9 +32,9 @@ class EMA(nn.Module):
         x1 = self.gn(group_x * x_h.sigmoid() * x_w.permute(0, 1, 3, 2).sigmoid())
         x2 = self.conv3x3(group_x)
         x11 = self.softmax(self.agp(x1).reshape(b * self.groups, -1, 1).permute(0, 2, 1))
-        x12 = x2.reshape(b * self.groups, c // self.groups, -1)  # b*g, c//g, hw
+        x12 = x2.reshape(b * self.groups, c // self.groups, -1) 
         x21 = self.softmax(self.agp(x2).reshape(b * self.groups, -1, 1).permute(0, 2, 1))
-        x22 = x1.reshape(b * self.groups, c // self.groups, -1)  # b*g, c//g, hw
+        x22 = x1.reshape(b * self.groups, c // self.groups, -1) 
         weights = (torch.matmul(x11, x12) + torch.matmul(x21, x22)).reshape(b * self.groups, 1, h, w)
         return (group_x * weights.sigmoid()).reshape(b, c, h, w)
 
@@ -44,7 +44,7 @@ class MLCA(nn.Module):
         self.local_size=local_size
         self.gamma = gamma
         self.b = b
-        t = int(abs(math.log(in_size, 2) + self.b) / self.gamma)   # eca  gamma=2
+        t = int(abs(math.log(in_size, 2) + self.b) / self.gamma) 
         k = t if t % 2 else t + 1
         self.conv = nn.Conv1d(1, 1, kernel_size=k, padding=(k - 1) // 2, bias=False)
         self.conv_local = nn.Conv1d(1, 1, kernel_size=k, padding=(k - 1) // 2, bias=False)
