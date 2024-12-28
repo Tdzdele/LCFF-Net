@@ -42,6 +42,5 @@ We sincerely thank all those who contributed to this study.
     url = {https://doi.org/10.1371/journal.pone.0315267},
     pages = {1-24},
     number = {12},
-
 }
 ```
